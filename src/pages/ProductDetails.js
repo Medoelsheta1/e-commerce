@@ -17,11 +17,11 @@ const ProductDetails = () => {
         <div className='productDetails m-0 pb-5 pt-5 row gap-20'>
             <div className='left col-6  row '>
                 <div className='imagesContainer  col-2 d-flex flex-column '>
-                    <img src={`http://localhost:1337${data[0]?.attributes?.img1?.data?.attributes?.url}`} alt='' onClick={() => setImage('img1')} />
-                    <img src={`http://localhost:1337${data[0]?.attributes?.img2?.data?.attributes?.url}`} alt=''onClick={() => setImage('img2')} />
+                    <img src={`${data[0]?.attributes?.img1?.data?.attributes?.url}`} alt='' onClick={() => setImage('img1')} />
+                    <img src={`${data[0]?.attributes?.img2?.data?.attributes?.url}`} alt=''onClick={() => setImage('img2')} />
                 </div>
                 <div className='productImage col-10'>
-                    <img src={`http://localhost:1337${data[0]?.attributes[image]?.data?.attributes?.url}`} alt='' />
+                    <img src={`${data[0]?.attributes[image]?.data?.attributes?.url}`} alt='' />
                 </div>
             </div>
             <ProductDetailsCombonent item={data[0]}   />

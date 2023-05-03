@@ -36,7 +36,7 @@ const Cart = (props) => {
                 products.map((item) => {
                     return (
                         <div key={item.id} className='cart-content d-flex gap-10 align-items-start'>
-                            <img className='productImageCart' src={`http://localhost:1337${item?.attributes?.img1?.data?.attributes?.url}`} alt=''/>
+                            <img className='productImageCart' src={`${item?.attributes?.img1?.data?.attributes?.url}`} alt=''/>
                             <div className='cart-text p-1  '>
                                 <h5 className='fs-6  '>{item.attributes.title}</h5>
                                 <p>{item.attributes.description}</p>

@@ -11,9 +11,9 @@ const  useFetch =  (url) => {
             setIsLoading(true)
             try {
                 
-                const res = await axios.get(`http://localhost:1337/api/${url}` , {
+                const res = await axios.get(`https://strapi-app-qgh7.onrender.com/api/${url}` , {
                     headers: {
-                        Authorization: 'bearer 625e2bc68a0fdbc2d74cceb33b5c9ac29e7ab89abb1263ace0dd5aef6e935ed0d1b08a45e2969719b2327e4ced7bb14ba159e271ee65f28737893a102bee04a61fe0a08fced0f4e664c0c3e77911b70931b9c8f04377d3efdbe42b33369f278f9d7fd2ceeb6217efeab503512393d895768fef032b3352f0d33c1a6cd40dab58'
+                        Authorization: 'bearer 05916cea29823807b31f7ec46ad63faf9467d622db6c76f60fe4db21f1a562fbb7db9b86a6898eef1f510374a4afd23ef11765484df4417ae2ba4ae3ada08cdf7799cb2ecfe519d2f5f36decfbcdab0f0acf98e0f2e6a11f6ff2376aea2a68218074f7142fcbb00746769374b0cc116dcdca992918d4cb2ebb94ac0a925d117e'
                     }
                 })
                 setData(res.data.data)
