@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { Reset } from './RTK/Slices/CartSlice'
 const SubmitOrder = (props) => {
+    const dispatch = useDispatch()
         const products = useSelector(state => state.cart.items)
         const [confirmOrders , setConfirmOrders] = useState(false)
 
@@ -29,7 +32,7 @@ const SubmitOrder = (props) => {
                     <span className='text-danger'>{props.totalPrice}$</span>
                 </div>
             <div className='checkout-buttons d-flex '>
-                        <button  onClick={()=> setConfirmOrders(true)} className='btn btn-danger  ' >Confirm</button>
+                        <button  onClick={()=> setConfirmOrders(true) + dispatch(Reset()) } className='btn btn-danger  ' >Confirm</button>
                     </div>   
 </>}    
         </div>
