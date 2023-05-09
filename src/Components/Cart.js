@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import {MdDelete} from 'react-icons/md'
 import { useSelector , useDispatch } from 'react-redux'
 import { Add , Remove , Delete , Reset } from './RTK/Slices/CartSlice'
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CheckoutForm from './Forms/CheckoutForm';
 
 const Cart = (props) => {
     const dispatch = useDispatch()
@@ -24,7 +25,12 @@ const Cart = (props) => {
             toast.error('You must login first')
             setPayNow(false)
         }else {
-            setPayNow(true)
+            if(products.length > 0) {
+                setPayNow(true)
+            }else {
+                toast.error('Your Cart is empty')
+            }
+            
         }
     }
     
@@ -65,8 +71,7 @@ const Cart = (props) => {
                 
                 <span className='c-pointer' onClick={() => dispatch(Reset())}>Reset Cart</span>                
             </div>
-            { isLogin && payNow && <StripeCheckout stripeKey='pk_test_51N132CL9jMBsnbunrTmjAa1btcRSl1hlHONeMEm3A7dB3t0tSWZNwAx5KN7fH8UOV5cgAnv0g5wE255BqRyuOB7300wDu7c5XR'
-            amount={totalPrice() * 100} token='pk_test_51N132CL9jMBsnbunrTmjAa1btcRSl1hlHONeMEm3A7dB3t0tSWZNwAx5KN7fH8UOV5cgAnv0g5wE255BqRyuOB7300wDu7c5XR' label='pay to X-store' description={`Your payment amount is ${totalPrice()}`} email={userData.email} />}
+            {isLogin && payNow &&  <CheckoutForm user={userData} setExit={setPayNow} totalPrice={totalPrice()} /> }
             <ToastContainer
                 position="top-left"
                 autoClose={2500}

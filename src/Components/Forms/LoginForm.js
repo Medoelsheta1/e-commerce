@@ -35,7 +35,7 @@ const LoginForm = () => {
             return;
         }
         try {
-            const res = await axios.post('http://localhost:1337/api/auth/local' , {
+            const res = await axios.post('https://strapi-app-qgh7.onrender.com/api/auth/local' , {
                 identifier: name,
                 password: pass
             })
@@ -46,7 +46,7 @@ const LoginForm = () => {
         }catch(err) {
             setFaildLogin(true)
         }
-        // console.log(res)
+
 
         
     }

@@ -27,7 +27,7 @@ const SignupForm = () => {
         if (!formValidate){
             return;
         }
-        const res = await axios.post('http://localhost:1337/api/auth/local/register' , {
+        const res = await axios.post('https://strapi-app-qgh7.onrender.com/api/auth/local/register' , {
             username: name,
             password: pass,
             email: mail

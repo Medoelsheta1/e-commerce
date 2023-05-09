@@ -9,9 +9,12 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Store from './Components/Store';
 import Profile from './Components/Profile';
-
+import { useSelector } from 'react-redux';
+import PageNotFound from './Components/PageNotFound';
+import Contact from './Components/Contact';
 
 function App() {
+  const isLogin = useSelector(state => state.cart.isLogin)
   return (
     <div className="App position-relative overflow-hidden ">
       <Routes>
@@ -25,7 +28,9 @@ function App() {
           <Route path='products/:category' element={<Store />} />
           <Route path='store/search' element={<Store />} />
           <Route path='store/search/:search' element={<Store />} />
-          <Route path='profile' element={<Profile />} />
+          {isLogin && <Route path='profile' element={<Profile />} />}
+          <Route path="*" element={<PageNotFound />} />
+          <Route path='contact' element={<Contact />} />
         </Route>
       </Routes>
     </div>

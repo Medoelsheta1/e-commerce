@@ -2,19 +2,33 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 const Profile = () => {
     const user = useSelector(state => state.cart.userData)
+    console.log(user)
     return (
         <div className='profile '>
-            <div className='profileContent'>
-                <div className='profileTitle mb-5'>
-                    <h1>Hello <span className='text-black'>{user.username}</span></h1>
-                </div>
-                <div className='profileDetails'>
-                    <h4>userAccount:  <span className='text-black'>{user.email}</span></h4>
-                    <h4>username:  <span className='text-black'>{user.username}</span></h4>
-                    <h4>Confirmed:  <span className='text-black'>{user.confirmed && 'true'}</span></h4>
-                    <h4 className='c-pointer'>change password</h4>
+            
+            <div className='container'>
+                <h3 className='text-start text-primary mb-4'>Hello {user.username}</h3>
+                <div className='profile-content d-flex flex-column align-items-start'>
+                    <div className='info d-flex justify-content-center align-items-center mb-4'>
+                        <h4 className='text-primary'> Your Name:&nbsp;</h4>
+                        <h4>{user.username}</h4>
+                    </div>
+                    <div className='info d-flex justify-content-center align-items-center mb-4'>
+                        <h4 className='text-primary'>Your email:&nbsp;</h4>
+                        <h4>{user.email}</h4>
+                    </div>
+                    <div className='info d-flex justify-content-center align-items-center mb-4'>
+                        <h4 className='text-primary'>Confirmed:&nbsp;</h4>
+                        <h4>{user.confirmed ? 'true' : 'false'}</h4>
+                    </div>
+                    <div className='info d-flex justify-content-center align-items-center mb-4'>
+                        <h4 className='text-primary'>Privilage:&nbsp;</h4>
+                        <h4>User</h4>
+                    </div>
+                    
                 </div>
             </div>
+                
 
         </div>
     )

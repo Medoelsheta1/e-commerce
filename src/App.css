@@ -644,28 +644,92 @@ ol {
 
 /* start profile */
 
+
+/* end profile */
 .profile {
-
-
   padding: 70px 0;
-  margin: 20px;
+
 }
-.profileContent {
-  width: fit-content;
-  border: 1px solid #eee;
-  padding: 30px;
+.profile .info {
+  border: 1px solid #333;
+  padding: 15px 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.profile .info:hover {
+  border-color: #EEE;
+}
+@media(max-width: 525px) {
+  .profile .info {
+    flex-direction: column;
+  }
+}
+/* submit order msg */
+
+.checkout-msg,
+.checkout-form {
+  min-width: 400px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  background-color: white;
+  padding: 40px 20px;
+  color: black;
+  border-radius: 7px;
+}
+@media(max-width: 404px) {
+.checkout-msg,
+  .checkout-form {
+    min-width: 310px;
+  }
+}
+.order-price p,
+.order-price span {
+  font-weight: bold;
+}
+.checkout-buttons {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+.order-button {
   display: block;
   margin-left: auto;
-  margin-right: auto;  
 }
-.profileDetails > h4 {
-  margin-bottom: 20px;
-  color: #3552f5;
+.bold {
+  font-weight: bold;
+}
+/* end submit order msg */
+
+.page-not-found {
+  text-align: center;
+  padding: 100px 0;
+}
+/* contact */
+
+.contact {
+  min-height: 60vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.map iframe {
+  width: 100%;
+  height: 300px;
+}
+.contact-text {
+  box-shadow: rgba(19, 36, 92, 0.493) 0px 3px 8px;
+}
+.contact-form input,
+.contact-form textarea {
   padding: 20px;
-  border-radius: 7px;
-  border: 1px solid #333;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #EEE;
 }
-.profileTitle h1 {
-  color: #3552f5;
+@media(max-width: 767px) {
+  .contact-wrabber {
+    flex-direction: column-reverse!important;
+  }
 }
-/* end profile */
+/* end contact */
