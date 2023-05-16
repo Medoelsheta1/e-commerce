@@ -35,7 +35,7 @@ const LoginForm = () => {
             return;
         }
         try {
-            const res = await axios.post('https://strapi-app-qgh7.onrender.com/api/auth/local' , {
+            const res = await axios.post('https://strapi-nbja.onrender.com/api/auth/local' , {
                 identifier: name,
                 password: pass
             })

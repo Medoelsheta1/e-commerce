@@ -14,7 +14,7 @@ const CheckoutForm = (props) => {
         e.preventDefault()
         try {
             toast.info('Sending your order')
-            await axios.post('https://strapi-app-qgh7.onrender.com/api/orders' , {
+            await axios.post('https://strapi-nbja.onrender.com/api/orders' , {
                 "data": {
                     name: props.user.username,
                     email: props.user.email,
