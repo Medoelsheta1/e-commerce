@@ -13,7 +13,7 @@ const  useFetch =  (url) => {
                 
                 const res = await axios.get(`https://strapi-nbja.onrender.com/api/${url}` , {
                     headers: {
-                        Authorization: 'bearer 05916cea29823807b31f7ec46ad63faf9467d622db6c76f60fe4db21f1a562fbb7db9b86a6898eef1f510374a4afd23ef11765484df4417ae2ba4ae3ada08cdf7799cb2ecfe519d2f5f36decfbcdab0f0acf98e0f2e6a11f6ff2376aea2a68218074f7142fcbb00746769374b0cc116dcdca992918d4cb2ebb94ac0a925d117e'
+                        Authorization: 'bearer 268fd66b94e80e358665336de61607d0a45285c90a8ef7eecb81248ce56014cab292980f703d428529b7343645532865a38988bf718af4aa882ff94c5aed874b7045a0715a95e338c0fa5d23bd030cacc39ca3bbc2c7a19acc832064b25fab54e43e497316688029965614fbdbd61325278b18948aa0edfb80f9aca6331b65a6'
                     }
                 })
                 setData(res.data.data)
