@@ -19,7 +19,7 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 ul {
@@ -520,7 +520,7 @@ ol {
 
 } */
 .card {
-  border: none;
+  border: none!important;
 }
 
 .icons {
