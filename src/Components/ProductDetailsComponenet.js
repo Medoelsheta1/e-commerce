@@ -16,7 +16,7 @@ const ProductDetailsCombonent = ({item }) => {
     }
     return (
         <>
-            <div className='right col-6'>
+            <div className='right col-lg-6 col-12'>
                 <div className='details'>
                     <h2 className='mb-3'>{item.attributes.title}</h2>
                     <span className='productPrice text-primary fs-2 d-block  mb-3'>{item.attributes.price}$</span>
